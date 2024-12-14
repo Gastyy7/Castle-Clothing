@@ -1,9 +1,9 @@
-.example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-  
+.home-container {
+  margin-top: -110px; /* Espacio opcional entre el Nav y la imagen */
+  text-align: center;
+}
+
+.home-image {
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  height: 820px; /* Mantiene la proporción de la imagen */
+}

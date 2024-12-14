@@ -1,4 +1,19 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
 }
+
+.navbar-brand {
+  color: white; /* Texto blanco */
+  font-family: "Newsreader", serif;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.nav-link {
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+  text-decoration: none;
+  font-size: 1.1rem;
+  
+}
+
