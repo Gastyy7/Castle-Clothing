@@ -5,7 +5,7 @@
 .navbar-brand {
   color: white; /* Texto blanco */
   font-family: "Newsreader", serif;
-  font-size: 2rem;
+  font-size: 3rem;
   padding-bottom: 1rem;
 }
 
@@ -13,7 +13,38 @@
   color: white;
   font-family: "Red Hat Display", sans-serif;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   
+}
+
+/* Estilo por defecto */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7); 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-brand {
+  color: white; 
+  font-family: "Newsreader", serif;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link {
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: white; 
+}
+
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+  color: black; 
 }
 

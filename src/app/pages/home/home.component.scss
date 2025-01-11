@@ -1,9 +1,62 @@
 .home-container {
-  margin-top: -110px; /* Espacio opcional entre el Nav y la imagen */
+  margin-top: -116px; 
   text-align: center;
 }
 
 .home-image {
-  width: 100%; /* Ocupa todo el ancho de la pantalla */
-  height: 820px; /* Mantiene la proporción de la imagen */
+  width: 100%; 
+  height: 820px; 
+}
+
+.title {
+  font-family: "Newsreader", serif;
+  font-size: 2rem;
+  padding-top: 2rem;
+}
+
+.row {
+  padding-bottom: 2rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.image-section {
+  position: relative;
+  width: 100%;
+  height: 900px;
+  overflow: hidden; 
+}
+.image-section img {
+  width: 100%;
+  height: 900px;
+  object-fit: cover; 
+  padding-bottom: 2rem;
+}
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+}
+.overlay-content h1 {
+  font-size: 2rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  font-family: "Newsreader", serif;
+}
+.overlay-content .btn-transparent {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white; 
+  border: 2px solid white; 
+  background-color: transparent; 
+  text-shadow: none;
+  transition: all 0.3s ease; 
+}
+.overlay-content .btn-transparent:hover {
+  background-color: transparent;
+  border: 2px solid black; 
+  color: black; 
 }
