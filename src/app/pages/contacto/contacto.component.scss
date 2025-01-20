@@ -38,16 +38,16 @@
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(9, 116, 230, 0.05)); /* Gradiente de colores */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(9, 116, 230, 0.05));
     z-index: -1;
-    filter: blur(20px); /* Difuminado */
-    border-radius: 20px; /* Redondeo acorde */
+    filter: blur(20px);
+    border-radius: 20px;
 }
 
 .bordered-h2 {
-    border-top: 3px solid #6c757d; /* Borde superior gris */
-    padding-top: 10px; /* Espaciado superior */
-    color: #343a40; /* Color del texto */
+    border-top: 3px solid #6c757d;
+    padding-top: 10px;
+    color: #343a40; 
     font-weight: bold;
 }
 
@@ -71,16 +71,15 @@
 
 
 .elegant-container {
-    padding: 20px; /* Espaciado interno */
-    background: linear-gradient(135deg, #ffffff, #6d6d6d); /* Fondo degradado */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .elegant-container .col-4 {
-    border-right: 2px solid #dee2e6; /* Divisores verticales */
+    border-right: 2px solid #575656;
 }
 .elegant-container .col-4:last-child {
-    border-right: none; /* Sin divisor en el último elemento */
+    border-right: none;
 }
 
 .maps {
