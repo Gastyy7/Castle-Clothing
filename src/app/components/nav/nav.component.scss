@@ -9,6 +9,21 @@
   padding-bottom: 1rem;
 }
 
+.borde-letras {
+  font-weight: bold;
+  font-size: 2rem; /* Asegúrate de que el texto sea suficientemente grande */
+  text-shadow: 
+      1px 1px 0 #000,  /* Borde de la letra hacia la derecha y hacia abajo */
+     -1px -1px 0 #000,  /* Borde hacia la izquierda y hacia arriba */
+      1px -1px 0 #000,   /* Borde hacia la derecha y hacia arriba */
+     -1px 1px 0 #000;    /* Borde hacia la izquierda y hacia abajo */
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  color: #000; /* Cambia el color del texto al pasar el ratón */
+}
+
+
 .nav-link {
   color: white;
   font-family: "Red Hat Display", sans-serif;
