@@ -1,1 +1,82 @@
-<p>productos works!</p>
+<div class="productos-component container-fluid my-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-12 col-md-3 mb-4">
+        <div class="border bg-light rounded p-3 shadow-sm">
+          <h5 class="mb-3">Filtros</h5>
+          
+          <!-- Categoría -->
+          <div class="mb-4 mt-6">
+            <h6 class="fw-bold">Categoría</h6>
+            <ul class="list-unstyled">
+              <li>
+                <input type="checkbox" id="category1" />
+                <label for="category1" class="ms-2">Conjuntos</label>
+              </li>
+              <li>
+                <input type="checkbox" id="category2" />
+                <label for="category2" class="ms-2">Tops</label>
+              </li>
+              <li>
+                <input type="checkbox" id="category3" />
+                <label for="category3" class="ms-2">Pantalones</label>
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Color -->
+          <div class="mb-4">
+            <h6 class="fw-bold">Color</h6>
+            <ul class="list-unstyled">
+              <li>
+                <input type="checkbox" id="color1" />
+                <label for="color1" class="ms-2">Gris</label>
+              </li>
+              <li>
+                <input type="checkbox" id="color2" />
+                <label for="color2" class="ms-2">Blanco</label>
+              </li>
+              <li>
+                <input type="checkbox" id="color3" />
+                <label for="color3" class="ms-2">Negro</label>
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Precio -->
+          <div class="mb-4">
+            <h6 class="fw-bold">Precio</h6>
+            <input type="range" class="form-range" min="0" max="5000" />
+            <div class="d-flex justify-content-between">
+              <span>$0</span>
+              <span>$5000</span>
+            </div>
+          </div>
+  
+          <!-- Botón aplicar -->
+          <button class="btn btn-dark w-100">Aplicar</button>
+        </div>
+      </div>
+  
+      <!-- Catálogo de productos -->
+      <div class="col-12 col-md-9">
+        <h2 class="text-center mb-4">Catálogo de Productos</h2>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let producto of productos">
+            <div class="card h-100 shadow-sm">
+              <img [src]="producto.imagen" alt="Imagen de producto" class="card-img-top">
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ producto.nombre }}</h5>
+                <p class="card-text text-muted">{{ producto.precio | currency }}</p>
+                <button class="btn btn-primary btn-sm">Ver Detalle</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Botón para cargar más -->
+        <div class="text-center mt-4">
+          <button class="btn btn-outline-dark">Cargar Más</button>
+        </div>
+      </div>
+    </div>
+  </div>
