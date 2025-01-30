@@ -1,0 +1,46 @@
+/* Estilos generales */
+.container-fluid {
+    max-width: 1200px;
+    margin-top: 50%;
+  }
+  .productos-component {
+    margin-top: 80px; /* Ajusta este valor para que no tape el navbar */
+  }
+  
+  
+  .card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  /* Sidebar */
+  .border {
+    border-color: #ddd !important;
+  }
+  
+  h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type='checkbox'] {
+    margin-right: 0.5rem;
+  }
+  
+  .form-range {
+    margin: 1rem 0;
+  }
+  

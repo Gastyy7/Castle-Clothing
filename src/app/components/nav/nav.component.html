@@ -1,25 +1,23 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
 <nav class="navbar navbar-light bg-light bg-transparent sticky-top">
   <div class="container text-center">
       <div class="w-100">
           <h1 class="navbar-brand mb-0 text-white py-3 borde-letras">Castle Clothing</h1>
           <ul class="nav justify-content-center">
               <li class="nav-item">
-                  <a class="nav-link active text-white borde-letras" href="#">Inicio</a>
+                  <a class="nav-link active text-white borde-letras" routerLink="/home">Inicio</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white borde-letras" href="#">Productos</a>
+                  <a class="nav-link text-white borde-letras" routerLink="/productos">Productos</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link text-white borde-letras" href="#">Contacto</a>
+                  <a class="nav-link text-white borde-letras" routerLink="/contacto">Contacto</a>
               </li>
           </ul>
+          <a class="nav-link text-white borde-letras position-relative carrito-icon" routerLink="/carrito">
+            <i class="fas fa-shopping-cart carrito-icon"></i>
+            <!-- Indicador del número de items -->
+            <span class="badge badge-pill position-absolute top-0 start-100 translate-middle">3</span>
+          </a>
       </div>
   </div>
 </nav>
