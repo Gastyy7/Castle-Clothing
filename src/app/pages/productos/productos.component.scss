@@ -1,4 +1,35 @@
 /* Estilos generales */
+
+.home-image {
+  width: 100%; 
+  height: 680px; 
+}
+
+.title-container {
+  padding-top: 0.4rem;
+  padding-bottom: 1rem;
+  position: relative; /* Para posicionar la línea sobre el texto */
+}
+
+.title {
+  display: inline-block; /* Centra el h1 con respecto a sí mismo */
+  position: relative; /* Permite posicionar el pseudo-elemento */
+  padding-top: 10px; /* Ajusta el espacio entre la línea y el texto */
+  margin: 0; /* Elimina márgenes adicionales del h1 */
+  font-family: "Newsreader", serif;
+  font-size: 2rem;
+}
+
+.title::before {
+  content: ""; /* Genera el pseudo-elemento para la línea */
+  position: absolute;
+  top: 0; /* Coloca la línea justo encima del texto */
+  left: 0;
+  width: 100%; /* La línea tendrá el mismo ancho que el h1 */
+  height: 2px; /* Grosor de la línea */
+  background-color: rgb(87, 87, 87); /* Color de la línea */
+}
+
 .container-fluid {
     max-width: 1200px;
     margin-top: 50%;
@@ -20,10 +51,12 @@
   .card-title {
     font-size: 1.1rem;
     font-weight: bold;
+    font-family: "Red Hat Display", sans-serif;
   }
   
   .card-text {
     font-size: 1rem;
+    font-family: "Red Hat Display", sans-serif;
   }
   
   /* Sidebar */

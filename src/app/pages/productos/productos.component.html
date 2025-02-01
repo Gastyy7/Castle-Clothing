@@ -1,3 +1,11 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+<div class="home-container position-relative">
+  <img src="../../../assets/imagenes/productos/local.jpg" alt="Imagen de inicio" class="home-image" />
+</div>
+
 <div class="productos-component container-fluid my-5">
     <div class="row">
       <!-- Sidebar -->
@@ -60,7 +68,11 @@
   
       <!-- Catálogo de productos -->
       <div class="col-12 col-md-9">
-        <h2 class="text-center mb-4">Catálogo de Productos</h2>
+        <div class="container">
+          <div class="title-container text-center mb-4">
+            <h1 class="title">Nuevos Productos</h1>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let producto of productos">
             <div class="card h-100 shadow-sm">
