@@ -7,11 +7,11 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
