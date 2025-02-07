@@ -1,94 +1,90 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
 <div class="home-container position-relative">
-  <img src="../../../assets/imagenes/productos/local.jpg" alt="Imagen de inicio" class="home-image" />
+  <img src="../../../assets/imagenes/productos/locaal.jpg" alt="Imagen de inicio" class="home-image" />
 </div>
 
-<div class="productos-component container-fluid my-5">
-    <div class="row">
-      <!-- Sidebar -->
-      <div class="col-12 col-md-3 mb-4">
-        <div class="border bg-light rounded p-3 shadow-sm">
-          <h5 class="mb-3">Filtros</h5>
-          
-          <!-- Categoría -->
-          <div class="mb-4 mt-6">
-            <h6 class="fw-bold">Categoría</h6>
-            <ul class="list-unstyled">
-              <li>
-                <input type="checkbox" id="category1" />
-                <label for="category1" class="ms-2">Conjuntos</label>
-              </li>
-              <li>
-                <input type="checkbox" id="category2" />
-                <label for="category2" class="ms-2">Tops</label>
-              </li>
-              <li>
-                <input type="checkbox" id="category3" />
-                <label for="category3" class="ms-2">Pantalones</label>
-              </li>
-            </ul>
-          </div>
-  
-          <!-- Color -->
-          <div class="mb-4">
-            <h6 class="fw-bold">Color</h6>
-            <ul class="list-unstyled">
-              <li>
-                <input type="checkbox" id="color1" />
-                <label for="color1" class="ms-2">Gris</label>
-              </li>
-              <li>
-                <input type="checkbox" id="color2" />
-                <label for="color2" class="ms-2">Blanco</label>
-              </li>
-              <li>
-                <input type="checkbox" id="color3" />
-                <label for="color3" class="ms-2">Negro</label>
-              </li>
-            </ul>
-          </div>
-  
-          <!-- Precio -->
-          <div class="mb-4">
-            <h6 class="fw-bold">Precio</h6>
-            <input type="range" class="form-range" min="0" max="5000" />
-            <div class="d-flex justify-content-between">
-              <span>$0</span>
-              <span>$5000</span>
-            </div>
-          </div>
-  
-          <!-- Botón aplicar -->
-          <button class="btn btn-dark w-100">Aplicar</button>
-        </div>
-      </div>
-  
-      <!-- Catálogo de productos -->
-      <div class="col-12 col-md-9">
-        <div class="container">
-          <div class="title-container text-center mb-4">
-            <h1 class="title">Nuevos Productos</h1>
-          </div>
-        </div>
+<div class="productos-component w-100 my-5 px-3">
+    <div class="row mx-0 d-flex align-items-start">
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let producto of productos">
-            <div class="card h-100 shadow-sm">
-              <img [src]="producto.imagen" alt="Imagen de producto" class="card-img-top">
-              <div class="card-body text-center">
-                <h5 class="card-title">{{ producto.nombre }}</h5>
-                <p class="card-text text-muted">{{ producto.precio | currency }}</p>
-                <button class="btn btn-primary btn-sm">Ver Detalle</button>
-              </div>
+            <div class="col-12 text-center mb-4">
+                <h1 class="title fw-bold" style="font-size: 2rem;">Nuevos Productos</h1>
             </div>
-          </div>
         </div>
-        <!-- Botón para cargar más -->
-        <div class="text-center mt-4">
-          <button class="btn btn-outline-dark">Cargar Más</button>
+        <!-- Sidebar (Filtros) -->
+        <div class="col-12 col-md-2 mb-0">
+            <div class="border bg-light rounded p-3 shadow-sm">
+                <h5 class="mb-3">Filtros</h5>
+                
+                <!-- Categoría -->
+                <div class="mb-4">
+                    <h6 class="fw-bold">Categoría</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <input type="checkbox" id="category1" />
+                            <label for="category1" class="ms-2">Conjuntos</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="category2" />
+                            <label for="category2" class="ms-2">Tops</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="category3" />
+                            <label for="category3" class="ms-2">Pantalones</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Color -->
+                <div class="mb-4">
+                    <h6 class="fw-bold">Color</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <input type="checkbox" id="color1" />
+                            <label for="color1" class="ms-2">Gris</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="color2" />
+                            <label for="color2" class="ms-2">Blanco</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="color3" />
+                            <label for="color3" class="ms-2">Negro</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Precio -->
+                <div class="mb-4">
+                    <h6 class="fw-bold">Precio</h6>
+                    <input type="range" class="form-range" min="0" max="5000" />
+                    <div class="d-flex justify-content-between">
+                        <span>$0</span>
+                        <span>$5000</span>
+                    </div>
+                </div>
+
+                <!-- Botón aplicar -->
+                <button class="btn btn-dark w-100">Aplicar</button>
+            </div>
         </div>
-      </div>
+
+        <!-- Catálogo de productos -->
+        <div class="col-12 col-md-10">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let producto of productos">
+                    <div class="card h-100 shadow-sm" style="min-height: 350px;"> <!-- Cards más chicas -->
+                        <img [src]="producto.imagen" alt="Imagen de producto" class="card-img-top" style="height: 400px; object-fit: cover;"> <!-- Imagen más chica -->
+                        <div class="card-body text-center p-1"> <!-- Menos padding -->
+                            <h6 class="card-title" style="font-size: 17px;">{{ producto.nombre }}</h6>
+                            <p class="card-text text-muted mb-1" style="font-size: 13px;">{{ producto.precio | currency }}</p>
+                            <button class="btn btn-primary btn-sm">Ver Detalle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botón para cargar más -->
+            <div class="text-center mt-4">
+                <button class="btn btn-outline-dark">Cargar Más</button>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
