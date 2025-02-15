@@ -1,23 +1,23 @@
 <nav class="navbar navbar-light bg-light bg-transparent sticky-top">
-  <div class="container text-center">
-      <div class="w-100">
-          <h1 class="navbar-brand mb-0 text-white py-3 borde-letras">Castle Clothing</h1>
-          <ul class="nav justify-content-center">
-              <li class="nav-item">
-                  <a class="nav-link active text-white borde-letras" routerLink="/home">Inicio</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-white borde-letras" routerLink="/productos">Productos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link text-white borde-letras" routerLink="/contacto">Contacto</a>
-              </li>
-          </ul>
-          <a class="nav-link text-white borde-letras position-relative carrito-icon" routerLink="/carrito">
-            <i class="fas fa-shopping-cart carrito-icon"></i>
-            <!-- Indicador del número de items -->
-            <span class="badge badge-pill position-absolute top-0 start-100 translate-middle">3</span>
-          </a>
-      </div>
-  </div>
-</nav>
+    <div class="container text-center">
+        <div class="w-100">
+            <h1 class="navbar-brand mb-0 text-white py-3 borde-letras">Castle Clothing</h1>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active text-white borde-letras" routerLink="/home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white borde-letras" routerLink="/productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white borde-letras" routerLink="/contacto">Contacto</a>
+                </li>
+            </ul>
+            <!-- Muestra el botón de cerrar sesión solo si el usuario está logueado -->
+            <div *ngIf="isLoggedIn">
+                <button class="btn btn-danger" (click)="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+    </div>
+  </nav>
+  

@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h4 class="modal-title">Eliminar Producto</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>¿Estás seguro de que deseas eliminar el producto "{{ producto.nombre }}"?</p>
+    <button class="btn btn-danger" (click)="eliminarProducto()">Eliminar</button>
+    <button class="btn btn-secondary" (click)="activeModal.close()">Cancelar</button>
+  </div>
+  

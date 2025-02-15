@@ -1,5 +1,5 @@
 <div class="home-container position-relative">
-  <img src="../../../assets/imagenes/productos/locaal.jpg" alt="Imagen de inicio" class="home-image" />
+    <img src="../../../assets/imagenes/productos/locaal.jpg" alt="Imagen de inicio" class="home-image" />
 </div>
 
 <div class="productos-component w-100 my-5 px-3">
@@ -8,6 +8,9 @@
             <div class="col-12 text-center mb-4">
                 <h1 class="title fw-bold" style="font-size: 2rem;">Nuevos Productos</h1>
             </div>
+        </div>
+        <div *ngIf="isLoggedIn" class="col-12 text-center mb-4">
+            <button class="btn btn-success" (click)="abrirModalAgregarProducto()">Añadir Producto</button>
         </div>
         <!-- Sidebar (Filtros) -->
         <div class="col-12 col-md-2 mb-0">
@@ -71,19 +74,19 @@
         <div class="col-12 col-md-10">
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let producto of productos">
-                    <div class="card h-100 shadow-sm" style="min-height: 350px;"> <!-- Cards más chicas -->
-                        <img [src]="producto.imagen" alt="Imagen de producto" class="card-img-top" style="height: 400px; object-fit: cover;"> <!-- Imagen más chica -->
-                        <div class="card-body text-center p-1"> <!-- Menos padding -->
+                    <div class="card h-100 shadow-sm" style="min-height: 350px;">
+                        <img [src]="producto.imagen_url" alt="Imagen de producto" class="card-img-top" style="height: 400px; object-fit: cover;">
+                        <div class="card-body text-center p-1">
                             <h6 class="card-title" style="font-size: 17px;">{{ producto.nombre }}</h6>
                             <p class="card-text text-muted mb-1" style="font-size: 13px;">{{ producto.precio | currency }}</p>
-                            <button class="btn btn-primary btn-sm">Ver Detalle</button>
+                            <button class="btn btn-primary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
+                            <div *ngIf="isLoggedIn">
+                                <button class="btn btn-warning btn-sm" (click)="abrirModalEditarProducto(producto)">Editar</button>
+                                <button class="btn btn-danger btn-sm" (click)="abrirModalEliminarProducto(producto)">Eliminar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Botón para cargar más -->
-            <div class="text-center mt-4">
-                <button class="btn btn-outline-dark">Cargar Más</button>
             </div>
         </div>
     </div>
