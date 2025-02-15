@@ -12,68 +12,22 @@
         <div *ngIf="isLoggedIn" class="col-12 text-center mb-4">
             <button class="btn btn-success" (click)="abrirModalAgregarProducto()">Añadir Producto</button>
         </div>
-        <!-- Sidebar (Filtros) -->
-        <div class="col-12 col-md-2 mb-0">
-            <div class="border bg-light rounded p-3 shadow-sm">
-                <h5 class="mb-3">Filtros</h5>
-                
-                <!-- Categoría -->
-                <div class="mb-4">
-                    <h6 class="fw-bold">Categoría</h6>
-                    <ul class="list-unstyled">
-                        <li>
-                            <input type="checkbox" id="category1" />
-                            <label for="category1" class="ms-2">Conjuntos</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="category2" />
-                            <label for="category2" class="ms-2">Tops</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="category3" />
-                            <label for="category3" class="ms-2">Pantalones</label>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Color -->
-                <div class="mb-4">
-                    <h6 class="fw-bold">Color</h6>
-                    <ul class="list-unstyled">
-                        <li>
-                            <input type="checkbox" id="color1" />
-                            <label for="color1" class="ms-2">Gris</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="color2" />
-                            <label for="color2" class="ms-2">Blanco</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="color3" />
-                            <label for="color3" class="ms-2">Negro</label>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Precio -->
-                <div class="mb-4">
-                    <h6 class="fw-bold">Precio</h6>
-                    <input type="range" class="form-range" min="0" max="5000" />
-                    <div class="d-flex justify-content-between">
-                        <span>$0</span>
-                        <span>$5000</span>
-                    </div>
-                </div>
-
-                <!-- Botón aplicar -->
-                <button class="btn btn-dark w-100">Aplicar</button>
-            </div>
+        <!-- Campo de búsqueda -->
+        <div class="col-12 mb-4">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar por nombre, precio o descripción..."
+                [(ngModel)]="terminoBusqueda"
+                (input)="filtrarProductos()"
+            />
         </div>
 
         <!-- Catálogo de productos -->
-        <div class="col-12 col-md-10">
+        <div class="col-12">
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let producto of productos">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let producto of productosFiltrados">
                     <div class="card h-100 shadow-sm" style="min-height: 350px;">
                         <img [src]="producto.imagen_url" alt="Imagen de producto" class="card-img-top" style="height: 400px; object-fit: cover;">
                         <div class="card-body text-center p-1">

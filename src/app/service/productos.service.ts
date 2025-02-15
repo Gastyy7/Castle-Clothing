@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductosService {
   private apiUrl = 'http://localhost:5000';
+  private aliasEmpresa = 'castleclothing.mp'
 
   constructor(private http: HttpClient) { }
 
@@ -25,4 +26,17 @@ export class ProductosService {
   eliminarProducto(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/productos/${id}`);
   }
+  enviarCorreo(email: string, producto: any, cantidad: number, nombre: string, direccion: string, celular: string): Observable<any> {
+    const body = {
+        email: email,
+        producto: producto,
+        cantidad: cantidad,
+        alias: this.aliasEmpresa,
+        nombre: nombre,
+        direccion: direccion,
+        celular: celular 
+    };
+
+    return this.http.post(`${this.apiUrl}/enviar-correo`, body);
+}
 }

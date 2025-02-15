@@ -13,7 +13,9 @@ import { DetalleProductoComponent } from 'src/app/modals/detalle-producto/detall
   styleUrls: ['./productos.component.scss'],
 })
 export class ProductosComponent implements OnInit {
-  productos: any[] = [];
+  productos: any[] = []; // Lista completa de productos
+  productosFiltrados: any[] = []; // Lista filtrada de productos
+  terminoBusqueda: string = ''; // Término de búsqueda
   isLoggedIn: boolean = false;
 
   constructor(
@@ -30,10 +32,12 @@ export class ProductosComponent implements OnInit {
     this.obtenerProductos();
   }
 
+  // Obtener productos desde el backend
   obtenerProductos() {
     this.productosService.getProductos().subscribe(
       (data: any) => {
         this.productos = data;
+        this.productosFiltrados = data; // Inicialmente, mostrar todos los productos
       },
       (error) => {
         console.error('Error al obtener productos:', error);
@@ -41,6 +45,24 @@ export class ProductosComponent implements OnInit {
     );
   }
 
+  // Filtrar productos por nombre, precio o descripción
+  filtrarProductos() {
+    if (!this.terminoBusqueda) {
+      this.productosFiltrados = this.productos; // Si no hay término de búsqueda, mostrar todos los productos
+      return;
+    }
+
+    const termino = this.terminoBusqueda.toLowerCase();
+    this.productosFiltrados = this.productos.filter((producto) => {
+      return (
+        producto.nombre.toLowerCase().includes(termino) || // Filtrar por nombre
+        producto.precio.toString().includes(termino) || // Filtrar por precio
+        producto.descripcion.toLowerCase().includes(termino) // Filtrar por descripción
+      );
+    });
+  }
+
+  // Métodos para abrir modales
   abrirModalAgregarProducto() {
     const modalRef = this.modalService.open(SumarProductoComponent);
     modalRef.componentInstance.productoAgregado.subscribe(() => {
@@ -67,5 +89,5 @@ export class ProductosComponent implements OnInit {
   abrirModalDetalleProducto(producto: any) {
     const modalRef = this.modalService.open(DetalleProductoComponent, { size: 'xl' });
     modalRef.componentInstance.producto = producto;
-  }  
+  }
 }

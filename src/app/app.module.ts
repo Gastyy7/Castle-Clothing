@@ -20,7 +20,8 @@ import { SumarProductoComponent } from './modals/sumar-producto/sumar-producto.c
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EliminarProductoComponent } from './modals/eliminar-producto/eliminar-producto.component';
 import { EditarProductoComponent } from './modals/editar-producto/editar-producto.component';
-import { DetalleProductoComponent } from './modals/detalle-producto/detalle-producto.component'; // Importación de NgbModule
+import { DetalleProductoComponent } from './modals/detalle-producto/detalle-producto.component';
+import { FormCompraComponent } from './modals/form-compra/form-compra.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DetalleProductoComponent } from './modals/detalle-producto/detalle-prod
     SumarProductoComponent,
     EliminarProductoComponent,
     EditarProductoComponent,
-    DetalleProductoComponent
+    DetalleProductoComponent,
+    FormCompraComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,6 @@ import { DetalleProductoComponent } from './modals/detalle-producto/detalle-prod
     NgbModule // Agregado en la lista de imports
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
