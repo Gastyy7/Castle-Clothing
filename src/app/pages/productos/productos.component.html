@@ -14,7 +14,7 @@
         </div>
 
         <!-- Campo de búsqueda -->
-        <div class="col-12 mb-4">
+        <div class="col-4 mb-4">
             <input
                 type="text"
                 class="form-control"
@@ -35,12 +35,12 @@
                             <p class="card-text text-muted mb-1" style="font-size: 13px;">{{ producto.precio | currency }}</p>
                             
                             <!-- Botón "Ver Detalle" -->
-                            <button class="btn btn-primary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
+                            <button class="btn btn-secondary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
         
                             <!-- Íconos de Editar y Eliminar (Visible solo si está logueado) -->
                             <div *ngIf="isLoggedIn" class="d-flex justify-content-center gap-2 mt-2">
                                 <!-- Botón Editar con ícono -->
-                                <button class="btn btn-warning btn-sm" (click)="abrirModalEditarProducto(producto)">
+                                <button class="btn btn-secondary btn-sm" (click)="abrirModalEditarProducto(producto)">
                                     <i class="fas fa-edit"></i> <!-- Ícono de FontAwesome -->
                                 </button>
         

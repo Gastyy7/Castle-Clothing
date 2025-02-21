@@ -18,14 +18,14 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.obtenerProductos();
   }
 
   obtenerProductos() {
     this.productosService.getProductos().subscribe(
       (data: any) => {
         this.productos = data;
-        this.productosFiltrados = data; // Inicialmente, mostrar todos los productos
+        this.productosFiltrados = this.productos.slice(-4);
       },
       (error) => {
         console.error('Error al obtener productos:', error);

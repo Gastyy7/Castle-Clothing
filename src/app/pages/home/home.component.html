@@ -10,46 +10,20 @@
 </div>
 
 
-<div class="container-fluid py-4 ">
+<div class="container-fluid py-4">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 px-2">
-        <div class="col text-center">
+        <div class="col text-center" *ngFor="let producto of productosFiltrados">
             <div class="card h-100">
-                <img src="../../../assets/imagenes/home/remera-blanca.jpg" class="card-img-top" alt="...">
+                <img [src]="producto.imagen_url" class="card-img-top" alt="{{ producto.nombre }}">
                 <div class="card-body">
-                    <h3 class="card-text">Remera Blanca CC</h3>
-                    <h3 class="card-text">$10.900</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col text-center">
-            <div class="card h-100">
-                <img src="../../../assets/imagenes/home/traje.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h3 class="card-text">Traje Negro CC</h3>
-                    <h3 class="card-text">$80.000</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col text-center">
-            <div class="card h-100">
-                <img src="../../../assets/imagenes/home/vestido.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h3 class="card-text">Vestido Bordo CC</h3>
-                    <h3 class="card-text">$50.000</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col text-center">
-            <div class="card h-100">
-                <img src="../../../assets/imagenes/home/saco-mujer.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h3 class="card-text">Saco Gris Oscuro CC</h3>
-                    <h3 class="card-text">$25.000</h3>
+                    <h3 class="card-text">{{ producto.nombre }}</h3>
+                    <h3 class="card-text">{{ producto.precio | currency }}</h3>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="image-section">
     <img src="../../../assets/imagenes/home/guillermo.png" alt="Imagen de fondo">
