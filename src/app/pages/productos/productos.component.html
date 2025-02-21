@@ -6,7 +6,7 @@
     <div class="row mx-0 d-flex align-items-start">
         <div class="row">
             <div class="col-12 text-center mb-4">
-                <h1 class="title fw-bold" style="font-size: 2rem;">Nuevos Productos</h1>
+                <h1 class="title fw-bold" style="font-size: 2rem;">Nuestros Productos</h1>
             </div>
         </div>
         <div *ngIf="isLoggedIn" class="col-12 text-center mb-4">
@@ -33,15 +33,26 @@
                         <div class="card-body text-center p-1">
                             <h6 class="card-title" style="font-size: 17px;">{{ producto.nombre }}</h6>
                             <p class="card-text text-muted mb-1" style="font-size: 13px;">{{ producto.precio | currency }}</p>
+                            
+                            <!-- Botón "Ver Detalle" -->
                             <button class="btn btn-primary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
-                            <div *ngIf="isLoggedIn">
-                                <button class="btn btn-warning btn-sm" (click)="abrirModalEditarProducto(producto)">Editar</button>
-                                <button class="btn btn-danger btn-sm" (click)="abrirModalEliminarProducto(producto)">Eliminar</button>
+        
+                            <!-- Íconos de Editar y Eliminar (Visible solo si está logueado) -->
+                            <div *ngIf="isLoggedIn" class="d-flex justify-content-center gap-2 mt-2">
+                                <!-- Botón Editar con ícono -->
+                                <button class="btn btn-warning btn-sm" (click)="abrirModalEditarProducto(producto)">
+                                    <i class="fas fa-edit"></i> <!-- Ícono de FontAwesome -->
+                                </button>
+        
+                                <!-- Botón Eliminar con ícono -->
+                                <button class="btn btn-danger btn-sm" (click)="abrirModalEliminarProducto(producto)">
+                                    <i class="fas fa-trash-alt"></i> <!-- Ícono de FontAwesome -->
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 </div>

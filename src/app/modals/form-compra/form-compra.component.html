@@ -1,6 +1,6 @@
 <div class="modal-header">
     <h2 class="modal-title">Finalizar Compra</h2>
-    <button type="button" class="btn-close" aria-label="Close" (click)="cerrarModal()"></button>
+    <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="cerrarModal()"></button>
 </div>
 <div class="modal-body">
     <form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
@@ -26,4 +26,8 @@
         </div>
         <button type="submit" class="btn btn-dark">Confirmar Compra</button>
     </form>
+</div>
+
+<div *ngIf="toastMessage" class="toast" [ngClass]="toastClass">
+    <p>{{ toastMessage }}</p>
 </div>

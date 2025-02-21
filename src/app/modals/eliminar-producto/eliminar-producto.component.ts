@@ -11,6 +11,9 @@ export class EliminarProductoComponent {
   @Input() producto: any;  // Recibe el producto a eliminar
   @Output() productoEliminado = new EventEmitter<void>();
 
+  toastMessage: string = '';
+  toastClass: string = '';
+
   constructor(
     public activeModal: NgbActiveModal,
     private productosService: ProductosService
@@ -20,12 +23,19 @@ export class EliminarProductoComponent {
     this.productosService.eliminarProducto(this.producto.id).subscribe(
       (response) => {
         this.productoEliminado.emit();  // Emitir evento para actualizar la lista
-        this.activeModal.close();  // Cerrar el modal
-        alert('Producto eliminado correctamente');
+        this.toastMessage = 'El producto fue eliminado exitosamente.';
+        this.toastClass = 'toast-success';
+        setTimeout(() => {
+          this.activeModal.close(); 
+        }, 3000); 
       },
       (error) => {
         console.error('Error al eliminar producto:', error);
-        alert('Error al eliminar producto');
+        this.toastMessage = 'Error al eliminar producto.';
+        this.toastClass = 'toast-error';
+        setTimeout(() => {
+          this.activeModal.close();
+        }, 3000); 
       }
     );
   }

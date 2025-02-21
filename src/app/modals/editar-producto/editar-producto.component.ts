@@ -14,6 +14,9 @@ export class EditarProductoComponent {
   productoForm: FormGroup;
   imagenSeleccionada: File | null = null;
 
+  toastMessage: string = '';
+  toastClass: string = '';
+
   constructor(
     private fb: FormBuilder,
     private productosService: ProductosService,
@@ -58,12 +61,19 @@ export class EditarProductoComponent {
       this.productosService.editarProducto(this.producto.id, formData).subscribe(
         (response) => {
           this.productoEditado.emit();
+          this.toastMessage = 'El producto fue editado exitosamente.';
+          this.toastClass = 'toast-success';
+          setTimeout(() => {
           this.activeModal.close();
-          alert('Producto editado correctamente');
+        }, 3000); 
         },
         (error) => {
           console.error('Error al editar producto:', error);
-          alert('Error al editar producto');
+          this.toastMessage = 'Error al editar el producto.';
+          this.toastClass = 'toast-error';
+          setTimeout(() => {
+          this.activeModal.close(); 
+        }, 3000);
         }
       );
     }
