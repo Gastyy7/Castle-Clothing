@@ -8,8 +8,10 @@ import { ProductosService } from 'src/app/service/productos.service';
     styleUrls: ['./form-compra.component.scss']
 })
 export class FormCompraComponent {
-  toastMessage: string = '';
-  toastClass: string = '';
+
+    toastMessage: string = '';
+    toastClass: string = '';
+
     @Input() producto: any; // Recibe el producto desde el componente padre
     nombre: string = '';
     email: string = '';
@@ -39,17 +41,22 @@ export class FormCompraComponent {
           this.direccion, 
           this.celular
       ).subscribe(
-          response => {
-              console.log('Correo enviado correctamente', response);
-              this.activeModal.close('Compra confirmada');
-              this.toastMessage = '¡Muchas gracias por elegirnos!';
-              this.toastClass = 'toast-success';
-          },
-          error => {
-              console.error('Error al enviar el correo', error);
-              this.toastMessage = 'Error al intentar realizar la compra.';
-              this.toastClass = 'toast-error';
-          }
+        response => {
+            console.log('Correo enviado correctamente', response);
+            this.toastMessage = '¡Compra exitosa!';
+            this.toastClass = 'toast-success';
+            setTimeout(() => {
+            this.activeModal.close(); 
+            }, 3000);
+        },
+        error => {
+            console.error('Error al enviar el correo', error);
+            this.toastMessage = 'Error en la compra.';
+            this.toastClass = 'toast-error';
+            setTimeout(() => {
+            this.activeModal.close(); 
+            }, 3000);
+        }
       );
   }
 }

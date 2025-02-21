@@ -1,6 +1,6 @@
 <div class="modal-header">
     <h4 class="modal-title">Editar Producto</h4>
-    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
@@ -30,4 +30,7 @@
       <button type="submit" class="btn btn-primary" [disabled]="!productoForm.valid">Guardar Cambios</button>
     </form>
   </div>
-  
+
+  <div *ngIf="toastMessage" class="toast" [ngClass]="toastClass">
+    <p>{{ toastMessage }}</p>
+  </div>

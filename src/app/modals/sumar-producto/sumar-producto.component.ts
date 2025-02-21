@@ -12,6 +12,9 @@ export class SumarProductoComponent {
   @Output() productoAgregado = new EventEmitter<void>();
   productoForm: FormGroup;
 
+  toastMessage: string = '';
+  toastClass: string = '';
+
   constructor(
     private fb: FormBuilder,
     private productosService: ProductosService,
@@ -45,12 +48,20 @@ export class SumarProductoComponent {
       this.productosService.agregarProducto(formData).subscribe(
         (response) => {
           this.productoAgregado.emit();
-          this.activeModal.close(); // Cierra el modal después de agregar el producto
-          alert('Producto agregado correctamente');
+          this.toastMessage = 'El producto fue agregado exitosamente.';
+          this.toastClass = 'toast-success';
+          setTimeout(() => {
+            this.activeModal.close(); 
+          }, 3000); 
         },
         (error) => {
           console.error('Error al agregar producto:', error);
-          alert('Error al agregar producto');
+          this.toastMessage = 'Error al agregar producto.';
+          this.toastClass = 'toast-error';
+          setTimeout(() => {
+            this.activeModal.close();
+          }, 3000); 
+
         }
       );
     }
