@@ -1,31 +1,33 @@
-<div class="modal-header">
-    <h2 class="modal-title">Finalizar Compra</h2>
-    <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="cerrarModal()"></button>
-</div>
-<div class="modal-body">
-    <form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="Ingresa tu nombre" required>
-            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Ingresa tu email" required>
-            <div class="invalid-feedback">Por favor, ingresa un email válido.</div>
-        </div>
-        <div class="form-group">
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" class="form-control" placeholder="Ingresa tu dirección" required>
-            <div class="invalid-feedback">Por favor, ingresa tu dirección.</div>
-        </div>
-        <div class="form-group">
-            <label for="celular">Número de Celular:</label>
-            <input type="text" id="celular" [(ngModel)]="celular" name="celular" class="form-control" placeholder="Ingresa tu número de celular" required>
-            <div class="invalid-feedback">Por favor, ingresa tu número de celular.</div>
-        </div>
-        <button type="submit" class="btn btn-dark">Confirmar Compra</button>
-    </form>
+<div class="modal-content rounded-3 shadow-lg modal-detalle">
+    <div class="modal-header bg-dark text-white d-flex justify-content-center p-3">
+        <h2 class="modal-title text-center">Finalizar Compra</h2>
+        <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" aria-label="Close" (click)="cerrarModal()"></button>
+    </div>
+    <div class="modal-body">
+        <form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" class="form-control" placeholder="Ingresa tu nombre" required>
+                <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Ingresa tu email" required>
+                <div class="invalid-feedback">Por favor, ingresa un email válido.</div>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" class="form-control" placeholder="Ingresa tu dirección" required>
+                <div class="invalid-feedback">Por favor, ingresa tu dirección.</div>
+            </div>
+            <div class="form-group">
+                <label for="celular">Número de Celular:</label>
+                <input type="text" id="celular" [(ngModel)]="celular" name="celular" class="form-control" placeholder="Ingresa tu número de celular" required>
+                <div class="invalid-feedback">Por favor, ingresa tu número de celular.</div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg w-100 mt-3 shadow-sm">Confirmar Compra</button>
+        </form>
+    </div>
 </div>
 
 <div *ngIf="toastMessage" class="toast" [ngClass]="toastClass">
