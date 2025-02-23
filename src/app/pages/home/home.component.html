@@ -18,18 +18,18 @@
                 <div class="card-body">
                     <h3 class="card-text">{{ producto.nombre }}</h3>
                     <h3 class="card-text">{{ producto.precio | currency }}</h3>
+                    <button class="btn btn-secondary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
 <div class="image-section">
     <img src="../../../assets/imagenes/home/guillermo.png" alt="Imagen de fondo">
     <div class="overlay-content">
         <h1>Nuestra Coleccion</h1>
-        <a href="#" class="btn btn-transparent">Ver</a>
+        <a routerLink="/productos" class="btn btn-transparent">Ver</a>
     </div>
 </div>
 

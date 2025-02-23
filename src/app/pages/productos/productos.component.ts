@@ -28,7 +28,7 @@ export class ProductosComponent implements OnInit {
     this.authService.isLoggedIn().subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;
     });
-
+    window.scrollTo(0, 0);
     this.obtenerProductos();
   }
 

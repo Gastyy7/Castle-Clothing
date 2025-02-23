@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DetalleProductoComponent } from 'src/app/modals/detalle-producto/detalle-producto.component';
 import { ProductosService } from 'src/app/service/productos.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,11 +15,14 @@ export class HomeComponent implements OnInit {
   isLoggedIn: boolean = false;
 
   constructor (
-    private productosService: ProductosService
+    private productosService: ProductosService,
+    private modalService: NgbModal
   ) {}
+  
 
   ngOnInit(): void {
     this.obtenerProductos();
+    window.scrollTo(0, 0);
   }
 
   obtenerProductos() {
@@ -32,5 +36,10 @@ export class HomeComponent implements OnInit {
       }
     );
   }
+
+    abrirModalDetalleProducto(producto: any) {
+      const modalRef = this.modalService.open(DetalleProductoComponent, { size: 'xl' });
+      modalRef.componentInstance.producto = producto;
+    }
 
 }
