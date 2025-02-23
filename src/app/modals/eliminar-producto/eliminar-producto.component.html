@@ -1,17 +1,19 @@
-<div class="modal-header">
-  <h4 class="modal-title">Eliminar Producto</h4>
-  <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+<div class="modal-content rounded-3 shadow-lg modal-detalle"> 
+  <div class="modal-heade bg-dark text-white d-flex justify-content-center p-3">
+    <h4 class="modal-title text-center">Eliminar Producto</h4>
+    <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  
+  <div class="modal-body">
+    <p>¿Estás seguro de que deseas eliminar el producto "{{ producto.nombre }}"?</p>
+  </div>
+  
+  <div class="modal-footer">
+    <button class="btn btn-danger p-2" (click)="eliminarProducto()">Eliminar</button>
+    <button class="btn btn-secondary p-2" (click)="activeModal.close()">Cancelar</button>
+  </div>
+  
 </div>
-
-<div class="modal-body">
-  <p>¿Estás seguro de que deseas eliminar el producto "{{ producto.nombre }}"?</p>
-</div>
-
-<div class="modal-footer">
-  <button class="btn btn-danger p-2" (click)="eliminarProducto()">Eliminar</button>
-  <button class="btn btn-secondary p-2" (click)="activeModal.close()">Cancelar</button>
-</div>
-
 <div *ngIf="toastMessage" class="toast" [ngClass]="toastClass">
   <p>{{ toastMessage }}</p>
 </div>

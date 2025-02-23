@@ -1,8 +1,7 @@
-<div class="modal-header">
-    <h4 class="modal-title">Editar Producto</h4>
-    <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+<div class="modal-content rounded-3 shadow-lg modal-detalle">
+  <div class="modal-header bg-dark text-white d-flex justify-content-center p-3">
+    <h4 class="modal-title text-center">Editar Producto</h4>
+    <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
   </div>
   
   <div class="modal-body">
@@ -27,10 +26,11 @@
         <input type="file" class="form-control" id="imagen" (change)="onFileChange($event)">
       </div>
   
-      <button type="submit" class="btn btn-primary" [disabled]="!productoForm.valid">Guardar Cambios</button>
+      <button type="submit" class="btn btn-secondary mt-3" [disabled]="!productoForm.valid">Guardar Cambios</button>
     </form>
   </div>
+</div>
 
-  <div *ngIf="toastMessage" class="toast" [ngClass]="toastClass">
-    <p>{{ toastMessage }}</p>
-  </div>
+<div *ngIf="toastMessage" class="toast" [ngClass]="toastClass">
+  <p>{{ toastMessage }}</p>
+</div>
