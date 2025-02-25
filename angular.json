@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/castle-clothing",
+            "outputPath": "dist/Castle-Clothing",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
