@@ -13,7 +13,6 @@
                     <a class="nav-link text-white borde-letras" routerLink="/contacto">Contacto</a>
                 </li>
             </ul>
-            <!-- Muestra el botón de cerrar sesión solo si el usuario está logueado -->
             <div *ngIf="isLoggedIn">
                 <button class="btn btn-danger" (click)="cerrarSesion()">Cerrar sesión</button>
             </div>

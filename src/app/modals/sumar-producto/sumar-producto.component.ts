@@ -52,7 +52,7 @@ export class SumarProductoComponent {
           this.toastClass = 'toast-success';
           setTimeout(() => {
             this.activeModal.close(); 
-          }, 3000); 
+          }, 2000); 
         },
         (error) => {
           console.error('Error al agregar producto:', error);
@@ -60,7 +60,7 @@ export class SumarProductoComponent {
           this.toastClass = 'toast-error';
           setTimeout(() => {
             this.activeModal.close();
-          }, 3000); 
+          }, 2000); 
 
         }
       );

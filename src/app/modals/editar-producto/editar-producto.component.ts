@@ -9,7 +9,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./editar-producto.component.scss'],
 })
 export class EditarProductoComponent {
-  @Input() producto: any; // Recibe el producto a editar
+  @Input() producto: any;
   @Output() productoEditado = new EventEmitter<void>();
   productoForm: FormGroup;
   imagenSeleccionada: File | null = null;
@@ -31,7 +31,6 @@ export class EditarProductoComponent {
   }
 
   ngOnInit() {
-    // Rellena el formulario con los datos del producto
     if (this.producto) {
       this.productoForm.patchValue({
         nombre: this.producto.nombre,
@@ -65,7 +64,7 @@ export class EditarProductoComponent {
           this.toastClass = 'toast-success';
           setTimeout(() => {
           this.activeModal.close();
-        }, 3000); 
+        }, 2000); 
         },
         (error) => {
           console.error('Error al editar producto:', error);
@@ -73,7 +72,7 @@ export class EditarProductoComponent {
           this.toastClass = 'toast-error';
           setTimeout(() => {
           this.activeModal.close(); 
-        }, 3000);
+        }, 2000);
         }
       );
     }

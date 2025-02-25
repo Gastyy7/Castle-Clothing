@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/service/auth.service'; // Ajusta la ruta según tu estructura
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -16,7 +16,6 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
     this.totalItems = this.obtenerTotalDelCarrito();
-    // Suscribirse al estado de autenticación
     this.authService.isLoggedIn().subscribe((loggedIn) => {
       this.isLoggedIn = loggedIn;
     });
@@ -34,7 +33,6 @@ export class NavComponent implements OnInit {
 
   cerrarSesion() {
     this.authService.logout();
-    // Después de cerrar sesión, redirige a la página de login (o donde prefieras)
     this.router.navigate(['/login']);
   }
 }

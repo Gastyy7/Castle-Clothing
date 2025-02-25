@@ -50,7 +50,7 @@ import { FormCompraComponent } from './modals/form-compra/form-compra.component'
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    NgbModule // Agregado en la lista de imports
+    NgbModule 
   ],
   providers: [],
   bootstrap: [AppComponent],

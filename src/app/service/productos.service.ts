@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductosService {
-  private apiUrl = 'http://localhost:5000';
+  private apiUrl = 'https://ecommerce-api-6b8e.onrender.com';
   private aliasEmpresa = 'castleclothing.mp'
 
   constructor(private http: HttpClient) { }

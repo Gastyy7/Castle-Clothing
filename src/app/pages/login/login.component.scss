@@ -65,7 +65,6 @@ h1 {
     background-color: #344b64;
   }
   
-/* Posicionamiento y estilo del toast */
 .toast {
   position: fixed;
   top: 20px;
@@ -83,11 +82,11 @@ h1 {
 }
 
 .toast-success {
-  background-color: #4caf50; /* Verde */
+  background-color: #4caf50;
 }
 
 .toast-error {
-  background-color: #f44336; /* Rojo */
+  background-color: #f44336;
 }
 
 .toast p {
