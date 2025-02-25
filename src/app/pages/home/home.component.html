@@ -1,20 +1,55 @@
-<mat-card class="example-card" appearance="outlined">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  
+<div class="home-container position-relative">
+    <img src="../../../assets/imagenes/home/robert 3.png" alt="Imagen de inicio" class="home-image" />
+    <h2 class="position-absolute bottom-0 end-0 text-white p-4 m-4 slogan">"Donde la elegancia se encuentra con el estilo."</h2>
+</div>
+
+<div class="container">
+    <div class="title-container text-center">
+        <h1 class="title">Nuevos Productos</h1>
+    </div>
+</div>
+
+
+<div class="container-fluid py-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 px-2">
+        <div class="col text-center" *ngFor="let producto of productosFiltrados">
+            <div class="card h-100">
+                <img [src]="producto.imagen_url" class="card-img-top" alt="{{ producto.nombre }}">
+                <div class="card-body">
+                    <h3 class="card-text">{{ producto.nombre }}</h3>
+                    <h3 class="card-text">{{ producto.precio | currency }}</h3>
+                    <button class="btn btn-secondary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="image-section">
+    <img src="../../../assets/imagenes/home/guillermo.png" alt="Imagen de fondo">
+    <div class="overlay-content">
+        <h1>Nuestra Coleccion</h1>
+        <a routerLink="/productos" class="btn btn-transparent">Ver</a>
+    </div>
+</div>
+
+<div class="container py-3">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <div class="row g-3">
+                <div class="col-6">
+                    <img src="../../../assets/imagenes/home/jim.jpg" class="img-fluid rounded" alt="Foto 1">
+                </div>
+                <div class="col-6">
+                    <img src="../../../assets/imagenes/home/messi.jpg" class="img-fluid rounded" alt="Foto 2">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+            <h2 class="fw-bold mb-4 custom-title"> La elegancia que mereces </h2>
+            <p class="text-muted">
+                Descubre la calidad y el estilo inigualable de Castle Clothing, donde cada prenda está diseñada para resaltar tu personalidad y brindarte el máximo confort. Con materiales de primera y diseños modernos, Castle Clothing es la elección perfecta para quienes buscan destacar en cualquier ocasión. ¡Vístete con lo mejor, vístete con Castle Clothing!
+            </p>
+        </div>
+    </div>
+</div>

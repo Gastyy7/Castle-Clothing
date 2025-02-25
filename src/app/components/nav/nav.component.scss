@@ -1,4 +1,110 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
 }
+
+.navbar-brand {
+  color: white;
+  font-family: "Newsreader", serif;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+
+.borde-letras {
+  font-weight: bold;
+  font-size: 2rem; 
+  text-shadow: 
+      1px 1px 0 #000, 
+     -1px -1px 0 #000, 
+      1px -1px 0 #000,  
+     -1px 1px 0 #000;   
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  color: #000; 
+}
+
+
+.nav-link {
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+  text-decoration: none;
+  font-size: 1.3rem;
+  
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7); 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-brand {
+  color: white; 
+  font-family: "Newsreader", serif;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link {
+  color: white;
+  font-family: "Red Hat Display", sans-serif;
+  text-decoration: none;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: white; 
+}
+
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+  color: black; 
+}
+
+
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1050;
+}
+
+.carrito-icon {
+  position: absolute;
+  top: 50%; 
+  right: 1rem;
+  transform: translateY(-50%); 
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+
+  i {
+    font-size: 2rem;
+    color: white;
+  }
+
+  .badge {
+    background-color: rgba(53, 42, 42, 0.973);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: -5px;
+    right: -10px;
+  }
+
+  &:hover {
+    color: #f0f0f0;
+
+    i {
+      color: #f0f0f0;
+    }
+  }
+}
+
+
+

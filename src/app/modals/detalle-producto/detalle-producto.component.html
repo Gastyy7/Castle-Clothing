@@ -1,0 +1,22 @@
+<div class="modal-content rounded-3 shadow-lg modal-detalle">
+  <div class="modal-header bg-dark text-white d-flex justify-content-center">
+    <h1 class="modal-title text-center w-100">Detalle del Producto</h1>
+    <button type="button" class="btn-close btn-close-white position-absolute end-0 me-3" 
+      aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body p-4">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center mb-3 mb-md-0">
+        <img [src]="producto.imagen_url" alt="Imagen del producto" class="img-fluid rounded shadow-sm">
+      </div>
+      <div class="col-md-6">
+        <h1 class="fw-bold mb-6">{{ producto.nombre }}</h1>
+        <p class="text-muted my-6">{{ producto.descripcion }}</p>
+        <h2 class="text-center fw-bold mt-6"><b>{{ producto.precio | currency }}</b></h2>
+        <button class="btn btn-success btn-lg w-100 mt-3 shadow-sm" (click)="comprarProducto()">
+          Comprar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

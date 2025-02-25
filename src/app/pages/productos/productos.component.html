@@ -1,1 +1,52 @@
-<p>productos works!</p>
+<div class="home-container position-relative">
+    <img src="../../../assets/imagenes/productos/locaal.jpg" alt="Imagen de inicio" class="home-image" />
+</div>
+
+<div class="productos-component w-100 my-5 px-3">
+    <div class="row mx-0 d-flex align-items-start">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1 class="title fw-bold" style="font-size: 2rem;">Nuestros Productos</h1>
+            </div>
+        </div>
+        <div *ngIf="isLoggedIn" class="col-12 text-center mb-4">
+            <button class="btn btn-success" (click)="abrirModalAgregarProducto()">Añadir Producto</button>
+        </div>
+
+        <div class="col-4 mb-4">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Buscar por nombre, precio o descripción..."
+                [(ngModel)]="terminoBusqueda"
+                (input)="filtrarProductos()"
+            />
+        </div>
+
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let producto of productosFiltrados">
+                    <div class="card h-100 shadow-sm" style="min-height: 350px;">
+                        <img [src]="producto.imagen_url" alt="Imagen de producto" class="card-img-top" style="height: 400px; object-fit: cover;">
+                        <div class="card-body text-center p-1">
+                            <h6 class="card-title" style="font-size: 17px;">{{ producto.nombre }}</h6>
+                            <p class="card-text text-muted mb-1" style="font-size: 13px;">{{ producto.precio | currency }}</p>
+                            
+                            <button class="btn btn-secondary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
+        
+                            <div *ngIf="isLoggedIn" class="d-flex justify-content-center gap-2 mt-2">
+                                <button class="btn btn-secondary btn-sm" (click)="abrirModalEditarProducto(producto)">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+        
+                                <button class="btn btn-danger btn-sm" (click)="abrirModalEliminarProducto(producto)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
