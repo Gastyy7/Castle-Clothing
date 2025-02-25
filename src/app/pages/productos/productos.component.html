@@ -13,7 +13,6 @@
             <button class="btn btn-success" (click)="abrirModalAgregarProducto()">Añadir Producto</button>
         </div>
 
-        <!-- Campo de búsqueda -->
         <div class="col-4 mb-4">
             <input
                 type="text"
@@ -24,7 +23,6 @@
             />
         </div>
 
-        <!-- Catálogo de productos -->
         <div class="col-12">
             <div class="row">
                 <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4" *ngFor="let producto of productosFiltrados">
@@ -34,19 +32,15 @@
                             <h6 class="card-title" style="font-size: 17px;">{{ producto.nombre }}</h6>
                             <p class="card-text text-muted mb-1" style="font-size: 13px;">{{ producto.precio | currency }}</p>
                             
-                            <!-- Botón "Ver Detalle" -->
                             <button class="btn btn-secondary btn-sm" (click)="abrirModalDetalleProducto(producto)">Ver Detalle</button>
         
-                            <!-- Íconos de Editar y Eliminar (Visible solo si está logueado) -->
                             <div *ngIf="isLoggedIn" class="d-flex justify-content-center gap-2 mt-2">
-                                <!-- Botón Editar con ícono -->
                                 <button class="btn btn-secondary btn-sm" (click)="abrirModalEditarProducto(producto)">
-                                    <i class="fas fa-edit"></i> <!-- Ícono de FontAwesome -->
+                                    <i class="fas fa-edit"></i>
                                 </button>
         
-                                <!-- Botón Eliminar con ícono -->
                                 <button class="btn btn-danger btn-sm" (click)="abrirModalEliminarProducto(producto)">
-                                    <i class="fas fa-trash-alt"></i> <!-- Ícono de FontAwesome -->
+                                    <i class="fas fa-trash-alt"></i>
                                 </button>
                             </div>
                         </div>

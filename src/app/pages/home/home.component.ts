@@ -9,9 +9,9 @@ import { ProductosService } from 'src/app/service/productos.service';
 })
 export class HomeComponent implements OnInit {
 
-  productos: any[] = []; // Lista completa de productos
-  productosFiltrados: any[] = []; // Lista filtrada de productos
-  terminoBusqueda: string = ''; // Término de búsqueda
+  productos: any[] = []; 
+  productosFiltrados: any[] = []; 
+  terminoBusqueda: string = '';
   isLoggedIn: boolean = false;
 
   constructor (

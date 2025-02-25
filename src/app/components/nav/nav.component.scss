@@ -1,9 +1,9 @@
 .navbar {
-  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .navbar-brand {
-  color: white; /* Texto blanco */
+  color: white;
   font-family: "Newsreader", serif;
   font-size: 3rem;
   padding-bottom: 1rem;
@@ -11,16 +11,16 @@
 
 .borde-letras {
   font-weight: bold;
-  font-size: 2rem; /* Asegúrate de que el texto sea suficientemente grande */
+  font-size: 2rem; 
   text-shadow: 
-      1px 1px 0 #000,  /* Borde de la letra hacia la derecha y hacia abajo */
-     -1px -1px 0 #000,  /* Borde hacia la izquierda y hacia arriba */
-      1px -1px 0 #000,   /* Borde hacia la derecha y hacia arriba */
-     -1px 1px 0 #000;    /* Borde hacia la izquierda y hacia abajo */
+      1px 1px 0 #000, 
+     -1px -1px 0 #000, 
+      1px -1px 0 #000,  
+     -1px 1px 0 #000;   
 }
 
 .nav-link:hover, .navbar-brand:hover {
-  color: #000; /* Cambia el color del texto al pasar el ratón */
+  color: #000; 
 }
 
 
@@ -32,7 +32,6 @@
   
 }
 
-/* Estilo por defecto */
 .navbar {
   background-color: rgba(0, 0, 0, 0.7); 
   transition: background-color 0.3s, color 0.3s;
@@ -74,9 +73,9 @@
 
 .carrito-icon {
   position: absolute;
-  top: 50%;  /* Centra el icono verticalmente */
+  top: 50%; 
   right: 1rem;
-  transform: translateY(-50%);  /* Ajusta el icono para que esté alineado con el centro vertical */
+  transform: translateY(-50%); 
   font-size: 1.8rem;
   color: white;
   text-decoration: none;

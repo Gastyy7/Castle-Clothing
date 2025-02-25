@@ -12,7 +12,7 @@ export class FormCompraComponent {
     toastMessage: string = '';
     toastClass: string = '';
 
-    @Input() producto: any; // Recibe el producto desde el componente padre
+    @Input() producto: any; 
     nombre: string = '';
     email: string = '';
     direccion: string = '';
@@ -20,19 +20,16 @@ export class FormCompraComponent {
 
     constructor(
         public activeModal: NgbActiveModal,
-        private productosService: ProductosService // Inyecta el servicio
+        private productosService: ProductosService 
     ) {}
 
-    // Cierra el modal
     cerrarModal() {
         this.activeModal.dismiss('Cerrado');
     }
 
-    // Envía los datos al backend
     onSubmit() {
-      const cantidad = 1; // Puedes ajustar la cantidad según tu lógica
+      const cantidad = 1;
   
-      // Usa el servicio para enviar el correo
       this.productosService.enviarCorreo(
           this.email, 
           this.producto, 
@@ -47,7 +44,7 @@ export class FormCompraComponent {
             this.toastClass = 'toast-success';
             setTimeout(() => {
             this.activeModal.close(); 
-            }, 3000);
+            }, 2000);
         },
         error => {
             console.error('Error al enviar el correo', error);
@@ -55,7 +52,7 @@ export class FormCompraComponent {
             this.toastClass = 'toast-error';
             setTimeout(() => {
             this.activeModal.close(); 
-            }, 3000);
+            }, 2000);
         }
       );
   }
