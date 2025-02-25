@@ -16,7 +16,7 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthService  // Inyectamos el servicio
+    private authService: AuthService 
   ) {}
 
   login() {
@@ -26,7 +26,7 @@ export class LoginComponent {
 
       setTimeout(() => {
         this.router.navigate(['/productos']);
-      }, 3000); 
+      }, 2000); 
     } else {
       this.toastMessage = 'Usuario o contraseña incorrectos';
       this.toastClass = 'toast-error';
@@ -34,6 +34,6 @@ export class LoginComponent {
 
     setTimeout(() => {
       this.toastMessage = '';
-    }, 3000);
+    }, 2000);
   }
 }

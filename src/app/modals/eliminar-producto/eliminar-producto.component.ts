@@ -8,7 +8,7 @@ import { ProductosService } from 'src/app/service/productos.service';
   styleUrls: ['./eliminar-producto.component.scss'],
 })
 export class EliminarProductoComponent {
-  @Input() producto: any;  // Recibe el producto a eliminar
+  @Input() producto: any; 
   @Output() productoEliminado = new EventEmitter<void>();
 
   toastMessage: string = '';
@@ -22,12 +22,12 @@ export class EliminarProductoComponent {
   eliminarProducto() {
     this.productosService.eliminarProducto(this.producto.id).subscribe(
       (response) => {
-        this.productoEliminado.emit();  // Emitir evento para actualizar la lista
+        this.productoEliminado.emit(); 
         this.toastMessage = 'El producto fue eliminado exitosamente.';
         this.toastClass = 'toast-success';
         setTimeout(() => {
           this.activeModal.close(); 
-        }, 3000); 
+        }, 2000); 
       },
       (error) => {
         console.error('Error al eliminar producto:', error);
@@ -35,7 +35,7 @@ export class EliminarProductoComponent {
         this.toastClass = 'toast-error';
         setTimeout(() => {
           this.activeModal.close();
-        }, 3000); 
+        }, 2000); 
       }
     );
   }

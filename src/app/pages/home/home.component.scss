@@ -14,26 +14,26 @@
 
 .title-container {
   padding-top: 2rem;
-  position: relative; /* Para posicionar la línea sobre el texto */
+  position: relative;
 }
 
 .title {
-  display: inline-block; /* Centra el h1 con respecto a sí mismo */
-  position: relative; /* Permite posicionar el pseudo-elemento */
-  padding-top: 10px; /* Ajusta el espacio entre la línea y el texto */
-  margin: 0; /* Elimina márgenes adicionales del h1 */
+  display: inline-block;
+  position: relative;
+  padding-top: 10px;
+  margin: 0;
   font-family: "Newsreader", serif;
   font-size: 2rem;
 }
 
 .title::before {
-  content: ""; /* Genera el pseudo-elemento para la línea */
+  content: ""; 
   position: absolute;
-  top: 0; /* Coloca la línea justo encima del texto */
+  top: 0; 
   left: 0;
-  width: 100%; /* La línea tendrá el mismo ancho que el h1 */
-  height: 2px; /* Grosor de la línea */
-  background-color: rgb(87, 87, 87); /* Color de la línea */
+  width: 100%; 
+  height: 2px; 
+  background-color: rgb(87, 87, 87); 
 }
 
 .row {
@@ -84,17 +84,17 @@
 }
 
 .custom-title {
-  display: inline-block; /* Permite centrar el h2 en relación a sí mismo */
-  position: relative; /* Habilita el pseudo-elemento */
-  margin: 0; /* Elimina márgenes predeterminados */
+  display: inline-block; 
+  position: relative;
+  margin: 0; 
 }
 
 .custom-title::before {
-  content: ""; /* Crea la línea */
+  content: ""; 
   position: absolute;
-  top: -10px; /* Ajusta la distancia de la línea al texto */
+  top: -10px; 
   left: 0;
-  width: 100%; /* La línea abarcará todo el ancho del texto */
-  height: 2px; /* Grosor de la línea */
-  background-color: rgb(78, 77, 77); /* Color de la línea */
+  width: 100%; 
+  height: 2px;
+  background-color: rgb(78, 77, 77); 
 }
